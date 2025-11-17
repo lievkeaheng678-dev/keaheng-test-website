@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: #131058;
+        min-height: 100vh;
+        color: white;
+    }
+
+    .product-detail-container {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .product-detail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 70px;
+    }
+
+    .product-detail img {
+        height: 500px;
+        width: 80%;
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .product-info h2 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .product-price {
+        font-size: 25px;
+        color: green;
+        font-weight: 700;
+    }
+
+
+
+    .product-quantity input {
+        width: 50px;
+        height: 30px;
+        margin-left: 10px;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+
+    .product-actions {
+        display: flex;
+        gap: 30px;
+    }
+
+    .btn {
+        background-color: #1D43AA;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn:hover {
+        background-color: #2563eb;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+        color: black;
+    }
+</style>
+
+<body>
+    <div class="product-detail-container">
+        <div class="product-detail">
+            <div class="product-image">
+                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt="">
+            </div>
+            <div class="product-info">
+                <h2>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h2>
+                <p class="product-price">$99.99</p>
+                <p style="font-size: 17px; color: #ddd; font-weight: 300;">Slim-fitting style, contrast raglan long
+                    sleeve, three-button henley placket, light weight & soft
+                    fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for
+                    durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round
+                    neckline includes a three-button placket.</p>
+                <div class="product-quantity">
+                    <label for="quantity">Quantity</label>
+                    <input type="text">
+                </div>
+                <div class="product-actions">
+                    <button class="btn">Add to Cart</button>
+                    <button class="btn" style="background-color: white; color:black;"><i class="icon"
+                            data-lucide="shopping-cart"></i>Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

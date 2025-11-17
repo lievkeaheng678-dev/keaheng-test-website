@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORE</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 0;
+        font-style: normal;
+    }
+
+    body {
+        color: white;
+        background-color: black;
+    }
+
+
+    .head {
+        width: 100%;
+        padding: 19px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+
+    .head h2 {
+        display: flex;
+        font-size: 30px;
+    }
+
+    .head-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        font-size: 19px;
+    }
+
+    .head-links a {
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .btn-class {
+        padding: 12px 24px;
+        height: 45px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #1D43AA, #2563eb);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .btn-class:hover {
+        transform: translateY(-2px);
+    }
+
+    .product-card {
+        width: 280px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .container-price {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: white;
+        font-weight: 600;
+    }
+
+    .container-desc {
+        color: #DDDD;
+        font-size: 15px;
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btns {
+        margin-top: 20px;
+        transform: translateZ(0);
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #1D43AA, #2563eb);
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        transform: scale(1.05) translateY(-2px);
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
+
+    .btn i {
+        font-size: 18px;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .btn:hover i {
+        transform: translateX(3px);
+    }
+
+    .icon {
+        color: black;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+
+    }
+
+    .product-card:hover {
+        position: relative;
+    }
+
+    .footer-all {
+        background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+        padding: 60px 5%;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .footer-logo img {
+        width: 50px;
+        height: auto;
+        filter: brightness(0) invert(1);
+    }
+
+    .footer-logo h3 {
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-column h4 {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .footer-column h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(135deg, #1D43AA, #2563eb);
+    }
+
+    .footer-column a {
+        color: #999;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 14px;
+    }
+
+    .footer-column a:hover {
+        color: #2563eb;
+        transform: translateX(3px);
+    }
+
+    .footer-column p {
+        color: #999;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-column p a {
+        color: #999;
+    }
+
+    .footer-column p a:hover {
+        color: #2563eb;
+    }
+
+
+    body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-all {
+        margin-top: auto;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="head">
+            <h2>My <span style="color:#1D43AA; padding-left: 15px;"> Store</span></h2>
+            <div class="head-links">
+                <li><a href="">Features</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Pricing</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Mores</a></li>
+            </div>
+            <div>
+                <button class="btn-class"><i class="icon" data-lucide="mail-search"></i>Send a Message</button>
+            </div>
+        </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$199.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Foldsack No. 1 Backpack</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$48.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$58.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Mens Cotton Jacket</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>290.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$678.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Solid Gold Petite Micropave</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$64.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>White Gold Plated Princess</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$175.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>WD 2TB Elements Portable External Hard Drive - USB 3.0</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$47.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <footer class="footer-all">
+        <div class="footer-logo">
+            <img src="https://img.icons8.com/?size=100&id=489&format=png&color=000000" alt="Store logo">
+            <h3>MY Shop</h3>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Products</h4>
+                <a href="#">Shirts</a>
+                <a href="#">Shoes</a>
+                <a href="#">Dress</a>
+                <a href="#">Accessories</a>
+                <a href="#">New Arrivals</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Return Policy</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>Phnom Penh</p>
+                <p><a href="mailto:lievkeaheng678@gmail.com">lievkeaheng678@gmail.com</a></p>
+                <p><a href="tel:+85517682365">+855 17 682 365</a></p>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <a href="#"><i data-lucide="facebook"></i> Facebook</a>
+                <a href="#"><i data-lucide="instagram"></i> Instagram</a>
+                <a href="#"><i data-lucide="twitter"></i> Twitter</a>
+                <a href="#"><i data-lucide="linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

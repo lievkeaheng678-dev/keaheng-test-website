@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework9</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 0;
+        font-style: normal;
+    }
+
+    .navbar {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar-list {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-item {
+        text-decoration: none;
+        padding: 25px;
+        color: black;
+        display: block;
+        font-size: 20px;
+
+
+    }
+
+    .nav-item:hover {
+        color: brown;
+    }
+
+    .navbar-img {
+        width: 90Px;
+        height: 70px;
+    }
+
+
+
+    .btn {
+        padding: 6px 12px;
+        margin: 15px 15px;
+        height: 45px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .btn:hover {
+        background-color: brown;
+        cursor: pointer;
+    }
+
+    .footer-all {
+        padding-top: 70px;
+        margin-top: 70px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        background: #DAD9D9;
+        padding: 35px 40px;
+        border-radius: 40px 0 0 0;
+    }
+
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        padding: 20px 40px;
+
+    }
+
+    .footer-logo img {
+        height: 40px;
+        width: 60px;
+        padding: 2px 5px 0 20px;
+    }
+
+    .footer-logo h3 {
+        font-size: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 60px;
+    }
+
+    .footer-column a {
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+
+    .footer-column {
+        text-transform: uppercase;
+    }
+
+    .container {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid white;
+        max-width: 400px;
+        margin: 50px 30px;
+        padding: 10px;
+
+    }
+
+    .container-all {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div>
+            <img class="navbar-img"
+                src="https://static.vecteezy.com/system/resources/previews/022/498/229/non_2x/mercedes-benz-logos-popular-brands-of-cars-isolated-on-transparent-background-3d-render-free-png.png"
+                alt="">
+        </div>
+        <ul class="navbar-list">
+            <li><a href="" class="nav-item">Home</a></li>
+            <li><a href="" class="nav-item">Product</a></li>
+            <li><a href="" class="nav-item">Contact</a></li>
+            <li><a href="" class="nav-item">About</a></li>
+            <li><a href="" class="nav-item">Projects</a></li>
+
+        </ul>
+        <button class="btn">Login In</button>
+    </div>
+    <div class="container-all">
+        <div class="container">
+            <div class="container-img">
+                <img src="https://th.bing.com/th/id/OIP.DzGiDLm_enV9ttTn0Em-xwHaE7?w=279&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="">
+                <div class="container-desc">
+                    <h3>
+                        2025 Mercedes-Benz Maybach</h3>
+                    <div>
+                        <p style="color:green; font-size: large;">$203,500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-img">
+                <img src="https://th.bing.com/th/id/OIP.DzGiDLm_enV9ttTn0Em-xwHaE7?w=279&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="">
+                <div class="container-desc">
+                    <h3>
+                        2025 Mercedes-Benz Maybach</h3>
+                    <div>
+                        <p style="color:green; font-size: large;">$203,500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-img">
+                <img src="https://th.bing.com/th/id/OIP.DzGiDLm_enV9ttTn0Em-xwHaE7?w=279&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                    alt="">
+                <div class="container-desc">
+                    <h3>
+                        2025 Mercedes-Benz Maybach</h3>
+                    <div>
+                        <p style="color:green; font-size: large;">$203,500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-all">
+        <div class="footer-logo">
+            <img src="https://img.icons8.com/?size=100&id=489&format=png&color=000000" alt="">
+            <h3>Online Shop</h3>
+        </div>
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4>Products</h4>
+                <a href="">Shirts</a>
+                <a href="">Shoes</a>
+                <a href="">Dress</a>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="">Privacy</a>
+                <a href="">Terms & Condition</a>
+                <a href="">Shipping</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <p>Phnom Penh</p>
+                <p><a href="mailto:lievkeaheng678@gmail.com">lievkeaheng678@gmail.com</a></p>
+                <p><a href="tel:+85517682365">+855 17 682 365</a></p>
+            </div>
+        </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

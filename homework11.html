@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-family: "Fira Sans", sans-serif;
+        font-weight: 0;
+        font-style: normal;
+    }
+
+    body {
+        color: white;
+        background-color: black;
+    }
+
+    .product-card {
+        width: 280px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .container-price {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: white;
+        font-weight: 600;
+    }
+
+    .container-desc {
+        color: #DDDD;
+        font-size: 15px;
+        height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btns {
+        margin-top: 20px;
+        transform: translateZ(0);
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #1D43AA, #2563eb);
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        transform: scale(1.05) translateY(-2px);
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: 0.5s;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
+
+    .btn i {
+        font-size: 18px;
+        color: white;
+        transition: transform 0.3s ease;
+    }
+
+    .btn:hover i {
+        transform: translateX(3px);
+    }
+
+    .icon {
+        color: black;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+
+    }
+
+    .product-card:hover {
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$199.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Foldsack No. 1 Backpack</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$48.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Mens Casual Premium Slim Fit T-Shirts</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$58.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Mens Cotton Jacket</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>290.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$678.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>Solid Gold Petite Micropave</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$64.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>White Gold Plated Princess</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$175.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>WD 2TB Elements Portable External Hard Drive - USB 3.0</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+
+        </div>
+        <div class="product-card">
+            <img src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png" alt="product-image">
+            <div class="container-price">
+                <p>$47.00</p>
+            </div>
+            <div class="container-desc">
+                <h4>SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s</h4>
+            </div>
+            <div class="btns">
+                <button class="btn"><i class="icon" data-lucide="shopping-cart"></i>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
